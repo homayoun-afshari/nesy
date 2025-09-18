@@ -8,7 +8,7 @@
 <p align="center">
  <img src="readme_files/gofai.webp" width="500px">
  <br>
- <it>From "<a href="https://billwadge.com/2024/02/12/the-rise-and-fall-of-gofai/">The Rise and Fall of GOFAI</a>" by Bill Wadge</it>
+ <i>From "<a href="https://billwadge.com/2024/02/12/the-rise-and-fall-of-gofai/">The Rise and Fall of GOFAI</a>" by Bill Wadge</i>
 </p>
 
 <p align="justify">
