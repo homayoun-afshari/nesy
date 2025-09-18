@@ -29,11 +29,11 @@
 ## NeSy Frameworks
 
 <p align="justify">
- Over the past few years, a parade of NeSy methods has marched onto the scene. Since NeSy is more a paradigm than a single trick up the AI sleeve, these methods double as frameworks, each with its own quirky way of blending neural networks with symbolic reasoning. Want the full scoop? Check out <a href="https://harshakokel.com/posts/neurosymbolic-systems/">Types of Neuro-Symbolic Systems</a>, which lays out Kautz's six-level taxonomy of NeSy like a map for AI treasure hunters. The big takeaway? These frameworks aren't just slapping neural and symbolic together like a sandwich' they're carefully engineering systems to reason and learn in harmony, often grounding abstract logic in real-world data. For a deeper dive, sneak a peek at <a href="https://arxiv.org/abs/2305.00813">Neurosymbolic AI - Why, What, and How</a>.
+ Over the past few years, a <i>parade</i> of NeSy methods has marched onto the scene. Since NeSy is more a <i>paradigm</i> than a single trick up the AI sleeve, these methods double as frameworks, each with its own quirky way of blending neural networks with symbolic reasoning. Want the full scoop? Check out <a href="https://harshakokel.com/posts/neurosymbolic-systems/">Types of Neuro-Symbolic Systems</a>, which lays out <i>Kautz's six-level taxonomy of NeSy</i> like a map for AI treasure hunters. The big takeaway? These frameworks aren't just slapping neural and symbolic together like a sandwich; they're <i>carefully engineering systems</i> to reason and learn in harmony. For a deeper dive, sneak a peek at <a href="https://arxiv.org/abs/2305.00813">Neurosymbolic AI - Why, What, and How</a>.
 </p>
 
 <p align="justify">
- The kicker? Training a NeSy system isn't your typical neural network rodeo. Take, for example, the task I tackled in my thesis: <a href="https://par.nsf.gov/servlets/purl/10440135">Visual Sudoku Puzzle Classification</a>. Picture a pile of labeled correct and incorrect Sudoku boards, where the model learns to classify them, but with a big twist: the supervision is on the labels, not the digits themselves. Oh, and the digits might not even be numbers. They can be English letters, Japanese signs, or even fashion items. Tricky, right? I'll spill more details on this puzzle later. The point is, NeSy systems shine when trained end-to-end, weaving together learning and reasoning like a cosmic tapestry.
+ The kicker? Training a NeSy system isn't your typical neural network <i>rodeo</i>. Take, for example, the task I tackled in my thesis: <a href="https://par.nsf.gov/servlets/purl/10440135">Visual Sudoku Puzzle Classification</a>. Picture a pile of labeled correct and incorrect Sudoku boards, where the model learns to classify them, but with a big twist: the supervision is only on the <i>labels</i> not the digits themselves. Oh, and the digits might not even be numbers. They can be English letters, Japanese signs, or even fashion items. Tricky, right? I'll spill more details on this puzzle later. The point is, NeSy systems shine when trained end-to-end, weaving together learning and reasoning like a cosmic tapestry.
 </p>
 
 <p align="justify">
@@ -41,14 +41,30 @@
 </p>
 
 <p align="justify">
- Now, you might wonder how these rigid binary FOL statements fit into the squishy floating-point world of NNs. That's where it gets interesing. You know <a href="https://en.wikipedia.org/wiki/Fuzzy_logic">Fuzzy Logic</a>, yeah? That's how! The brilliance of LTNs comes from <i>grounding</i>' a process that relaxes those hard all-or-nothing statements into something softer and more flexible. For example, take a statement like "y = a & b". LTNs use fuzzy logic to encode this into a neural network, allowing it to handle uncertainty and partial truths, like a wise sage navigating life's gray areas.
+ Now, you might wonder how these rigid binary FOL statements fit into the squishy floating-point world of NNs. That's where it gets interesing. You know <a href="https://en.wikipedia.org/wiki/Fuzzy_logic">Fuzzy Logic</a>, yeah? That's how! The brilliance of LTNs comes from <i>grounding</i>; a process that relaxes those hard all-or-nothing statements into something softer and more flexible. For example, take a statement like "y = a & b". LTNs use fuzzy logic to encode this into a neural network, allowing it to handle uncertainty and partial truths, like a wise sage navigating life's gray areas.
 </p>
 
 ## Challenge
 
+<p align="justify">
+ NeSy systems are the bee's knees, and some even believe the next paradigm shift in AI will come courtesy of NeSy. But, another old saying goes, "every coin has two sides". NeSy is awesome but not flawless. There are still hurdles to jump, and for my thesis, I focused on a triple-threat challenge in current NeSy visual reasoning systems. Some approaches are slick but stubborn, locked into a fixed set of logical rules with zero wiggle room to adapt to new ones. Others are more flexible, dynamically extracting underlying logical rules from data; but good luck explaining how they got there or what they even are! Newer systems have tried to bridge this gap, but their rules lack formality; meaning they're too wordy for machines to verify without a human poking around. So, the million-dollar question is: can we build a NeSy system for visual reasoning that's flexible, explainable, and formal, all at once?
+</p>
+
 ## Conceptual Solution
 
-## Practical Solution
+<p align="justify">
+ My general idea to crack this challenge is the system sketched below. It kicks off with two inputs: textual data (instructions or descriptions) and visual data (the actual images). These get tossed into a context generator, which mashes them together into a unified context, like a smoothie blender for AI. From there, a rule generator grabs this context and whips up symbolic rules. Meanwhile, the visual input also feeds into a visual processor to cook up visual symbols. Then, a rule verifier swoops in, applying those symbolic rules to the visual symbols to deliver the final output.
+</p>
+
+<p align="center">
+ <img src="readme_files/conceptual.svg" width="500px">
+</p>
+
+<p align="justify">
+ Now, here’s where the party starts: the final output loops back into the context generator, acting like a mid-game coach dishing out feedback. This means the system can spot its own fumbles and fix them on the fly; sort of inspired by Reinforcement Learning (RL). Plus, the rule generator itself gets in on the feedback action, tweaking its own rules if things go off the rails. This setup nails the trifecta I mentioned earlier: it's flexible (adapts to different tasks like a champ), explainable (rules are in clear symbolic language, not a mathematical tensor nightmare), and formal (rules are machine-verifiable, no human babysitting required).
+</p>
+
+## Functional Solution
 
 ## Running the Codes
 
