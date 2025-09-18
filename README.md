@@ -57,7 +57,7 @@
 </p>
 
 <p align="center">
- <img src="readme_files/conceptual.svg" width="500px">
+ <img src="readme_files/conceptual.png" width="500px">
 </p>
 
 <p align="justify">
@@ -65,6 +65,10 @@
 </p>
 
 ## Functional Solution
+
+<p align="center">
+ <img src="readme_files/functional.png" width="500px">
+</p>
 
 ## Running the Codes
 
