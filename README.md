@@ -28,8 +28,18 @@
 
 ## NeSy Methods
 
+DSL, RESOLVE, LTNs.
 
 ## Challenge
 
+## Conceptual Solution
 
-## Solution
+## Practical Solution
+
+## Running the Codes
+
+### Initialization
+
+### Data Preparation
+
+### Main Algorithm
