@@ -61,14 +61,21 @@
 </p>
 
 <p align="justify">
- Now, here’s where the party starts: the final output loops back into the context generator, acting like a mid-game coach dishing out feedback. This means the system can spot its own fumbles and fix them on the fly; sort of inspired by Reinforcement Learning (RL). Plus, the rule generator itself gets in on the feedback action, tweaking its own rules if things go off the rails. This setup nails the trifecta I mentioned earlier: it's flexible (adapts to different tasks like a champ), explainable (rules are in clear symbolic language, not a mathematical tensor nightmare), and formal (rules are machine-verifiable, no human babysitting required).
+ Now, here's where the party starts: the final output loops back into the context generator, acting like a mid-game coach dishing out feedback. This means the system can spot its own fumbles and fix them on the fly; sort of inspired by Reinforcement Learning (RL). Plus, the rule generator itself gets in on the feedback action, tweaking its own rules if things go off the rails. This setup nails the trifecta I mentioned earlier: it's flexible (adapts to different tasks like a champ), explainable (rules are in clear symbolic language, not a mathematical tensor nightmare), and formal (rules are machine-verifiable, no human babysitting required).
 </p>
 
 ## Functional Solution
 
+<p align="justify">
+ Alright, let’s get down to the nuts and bolts of how this idea comes to life. There are a many ways to pull this off, depending on the functional designs you pick for each module described. For my thesis, with time and resources tighter than a spaceship's airlock, I went for the simplest setup I could find, as shown in the figure below. I used a prompt engineer to carve prompts and act as the context generator. Then, a Vision Language Model (VLM) took those prompts and churned out symbolic rules in FOL. For the visual processor, I leaned on a straightforward Convolutional Neural Network (CNN) and used its output embeddings as the visual symbols. Finally, a Dynamic Logic Tensor Network (D-LTN) stepped up as the rule verifier to deliver the final output.
+</p>
+
 <p align="center">
  <img src="readme_files/functional.png" width="500px">
 </p>
+
+<p align="justify">
+ While this functional setup might look simplistic at the first look, the D-LTN is the real MVP of my work. In that module, I dynamically convert symbolic rules into LTNs, which meant building a parser for FOL and crafting an autonomous pipeline to train and test those D-LTNs. To pull this off, I used <a href="https://lark-parser.readthedocs.io/en/stable/">Lark</a> and sprinkled in some meta-programming magic to create a Python template that reads and understands FOL like a logic-loving poet. This pipeline is the secret sauce, letting the system hum along smoothly while keeping everything flexible, explainable, and formality promises.
 
 ## Running the Codes
 
