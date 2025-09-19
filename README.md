@@ -80,7 +80,7 @@
 ## Running the Codes
 
 <p align="justify">
-  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. You can clone it locally or on cloud, but there's a better way. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say you call it <code>nesy</code> and put it in your home folder like a sane person. Then, simply copy <a href="data_collection.ipynb">data_collection.ipynb</a>, <a href="main_algorithm.ipynb">main_algorithm.ipynb</a>, and the <a href="">datasets</a> folder to it. That's it, you can run the codes now.
+  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. You can clone it locally or on cloud, but there's a better way. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say you call it <code>nesy</code> and put it in your home folder like a sane person. Then, simply copy <a href="data_collection.ipynb">data_collection.ipynb</a>, <a href="main_algorithm.ipynb">main_algorithm.ipynb</a>, <a href="visudo_scripts.zip">visudo_scripts.zip</a>, and the <a href="">datasets</a> folder to it. That's it, you can run the codes now. I will explain these files in the following.
 </p>
 
 ### Data Collection
