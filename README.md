@@ -80,7 +80,7 @@
 ## Running the Codes
 
 <p align="justify">
-  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say it's called `nesy`.
+  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say it's called <code>nesy</code>.
 </p>
 
 ### Initialization
