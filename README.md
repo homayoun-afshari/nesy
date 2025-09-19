@@ -13,7 +13,7 @@
 </p>
 
 <p align="justify">
- However, these days, GOFAI is like that retro band in the '90s; rarely heard but fondly remembered. So, what happened? Did we ditch it? Like all good things, GOFAI birthed modern AI and then slipped into the shadows. Why? Well, NNs swooped in with their data-crunching superpowers, learning everything from cat pics to quantum physics <i>without needing hand-crafted rules</i>. They were flashy, flexible, and frankly, too cool to resist. Also, GOFAI's rigid logic <i>couldn't keep up</i> with the big data party, so it took a backseat. But now, as we teeter on the edge of Artificial General Intelligence (AGI), we're dusting off GOFAI's playbook. Those logical roots are making a comeback, because, let's face it, learning is great, but reasoning like a human is <i>the real jackpot</i>. After all, as the old saying goes, "the creaking gate hangs longest". So, buckle up for a new brand of AI!
+ However, these days, GOFAI is like that retro band in the '90s; rarely heard but fondly remembered. So, what happened? Did we ditch it? Like all good things, GOFAI birthed modern AI and then slipped into the shadows. Why? Well, NNs swooped in with their data-crunching superpowers, learning everything from cat pics to quantum physics <i>without needing hand-crafted rules</i>. They were flashy, flexible, and frankly, too cool to resist. Also, GOFAI's rigid logic <i>couldn't keep up</i> with the big data party, so it took a backseat. But now, as we teeter on the edge of Artificial General Intelligence (AGI), we're dusting off GOFAI's playbook. Those logical roots are making a comeback, because, let's face it, learning is great, but reasoning like a human is <i>the real jackpot</i>. After all, as the old saying goes, <quote>the creaking gate hangs longest</quote>quote>. So, buckle up for a new brand of AI!
 </p>
 
 ## NeSy AI
@@ -80,7 +80,7 @@
 ## Running the Codes
 
 <p align="justify">
-  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say it's called <code>nesy</code>.
+  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say you call it <code>nesy</code> like a sane person.
 </p>
 
 ### Initialization
