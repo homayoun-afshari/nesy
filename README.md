@@ -88,13 +88,18 @@
 ## The Codes
 
 <p align="justify">
-  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. You can clone it locally or on cloud, but there's a better way. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say you call it <code>nesy</code> and put it in your home folder like a sane person. Then, simply copy <a href="data_collection.ipynb">data_collection.ipynb</a>, <a href="main_algorithm.ipynb">main_algorithm.ipynb</a>, <a href="visudo_scripts.zip">visudo_scripts.zip</a>, and the <a href="datasets">datasets</a> folder to it. That's it, you can run the codes now. I will explain these files in the following.
+  Finally, it's time to roll up our sleeves and get into the real business. I've prepared a minimalistic implementation of this project in the repository. You could clone it locally or spin it up in the cloud, but let's keep things simple: I've tuned the code to run smoothly on Google Colab, which means you'll need a bit of Google Drive space as well. To get started, create a folder in your Drive and name it whatever like. Let's say you go with <code>nesy</code> and put it into your home folder like a sane person. Then, just drag and drop <a href="data_collection.ipynb">data_collection.ipynb</a>, <a href="main_algorithm.ipynb">main_algorithm.ipynb</a>, <a href="visudo_scripts.zip">visudo_scripts.zip</a>, and <a href="datasets">datasets</a> into <code>nesy</code>. That's it, you're ready to run the show. I'll break down these files next.
 </p>
 
 ### Data Collection
 
 <p align="justify">
- The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> is for collecting the data used for the Sudoku task I was talking about. If you don't want to do this, you can skip this part. I've already collected the required data in the <a href="datasets">datasets</a> folder. However, if you're curious, here I explain how I created it or how you do it on your own. I tried my best to make the code 
+ The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> is for collecting the data used for the Sudoku task I was talking about. If you don't want to do this, you can skip this part. I've already collected the required data in the <a href="datasets">datasets</a> folder. However, if you're curious, here I explain how I created it or how you do it on your own. I tried my best to make the code descriptive enough. The most important points are:
+ <ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+ </ul>
 </p>
 
 ### Main Algorithm
