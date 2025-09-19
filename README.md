@@ -13,7 +13,7 @@
 </p>
 
 <p align="justify">
- However, these days, GOFAI is like that retro band in the '90s; rarely heard but fondly remembered. So, what happened? Did we ditch it? Like all good things, GOFAI birthed modern AI and then slipped into the shadows. Why? Well, NNs swooped in with their data-crunching superpowers, learning everything from cat pics to quantum physics <i>without needing hand-crafted rules</i>. They were flashy, flexible, and frankly, too cool to resist. Also, GOFAI's rigid logic <i>couldn't keep up</i> with the big data party, so it took a backseat. But now, as we teeter on the edge of Artificial General Intelligence (AGI), we're dusting off GOFAI's playbook. Those logical roots are making a comeback, because, let's face it, learning is great, but reasoning like a human is <i>the real jackpot</i>. After all, as the old saying goes, <q>the creaking gate hangs longest</q>. So, buckle up for a new brand of AI!
+ However, these days, GOFAI is like that retro band in the '90s; rarely heard but fondly remembered. So, what happened? Why did we ditch it if it was so great? Like all good things, GOFAI birthed modern AI and then slipped into the shadows. Why? Well, NNs swooped in with their data-crunching superpowers, learning everything from cat pics to quantum physics <i>without needing hand-crafted rules</i>. They were flashy, flexible, and frankly, too cool to resist. Also, GOFAI's rigid logic <i>couldn't keep up</i> with the big data party, so it took a backseat. But now, as we teeter on the edge of Artificial General Intelligence (AGI), we're dusting off GOFAI's playbook. Those logical roots are making a comeback, because, let's face it, learning is great, but reasoning like a human is <i>the real jackpot</i>. After all, as the old saying goes, <q>the creaking gate hangs longest</q>. So, buckle up for a new brand of AI!
 </p>
 
 ## NeSy AI
@@ -23,7 +23,11 @@
 </p>
 
 <p align="justify">
- NeSy AI <i>marries</i> this logical wizardry with a NN's knack for spotting patterns in messy data, like recognizing a cat in a blurry photo, which means giving your NN a PhD in logic while keeping its data-crunching vibes. Cool, right? It becomes even cooler to know this combo works for a good reason. Cognitive science tells us our brains use <i>two systems</i> for thinking. System 1, the <i>Homer Simpson of AI</i>, is your gut instinc; quick, intuitive, and great at spotting patterns in data to apply to new situations. System 2, the <i>Sherlock Holmes of AI</i>, is your beautiful problem-solving mind; deep, deliberate, and powerful at reasoning. NeSy does both: its neural part learns from data (System 1) and its symbolic part reasons about it (System 2). But, how do we actually do NeSy AI?
+ NeSy AI <i>marries</i> this logical wizardry with a NN's knack for spotting patterns in messy data, like recognizing a cat in a blurry photo, which means giving your NN a PhD in logic while keeping its data-crunching vibes. Cool, right? It becomes even cooler to know this combo works for a good reason. Cognitive science tells us our brains use <i>two systems</i> for thinking. System 1, the <i>Homer Simpson of AI</i>, is your gut instinc; quick, intuitive, and great at spotting patterns in data to apply to new situations. System 2, the <i>Sherlock Holmes of AI</i>, is your beautiful problem-solving mind; deep, deliberate, and powerful at reasoning. NeSy does both: its neural part learns from data (System 1) and its symbolic part reasons about it (System 2).
+</p>
+
+<p align="justify">
+  But, how do we actually do NeSy AI? Training a NeSy system isn't your typical NN <i>rodeo</i>. Take, for example, the task I tackled in my thesis: <a href="https://par.nsf.gov/servlets/purl/10440135">Visual Sudoku Puzzle Classification</a>, where the model learns to classify a pile of labeled correct and incorrect Sudoku boards but with a big twist: the supervision is only on the <i>labels</i> not the digits themselves. Oh, and the digits might not even be numbers. They can be English letters, Japanese signs, or even fashion items. Tricky, right? I'll spill more details on this puzzle later. The point is, NeSy frameworks shine when trained end-to-end, weaving together learning and reasoning like a cosmic tapestry.
 </p>
 
 ## NeSy Frameworks
@@ -33,11 +37,7 @@
 </p>
 
 <p align="justify">
- The kicker? Training a NeSy system isn't your typical NN <i>rodeo</i>. Take, for example, the task I tackled in my thesis: <a href="https://par.nsf.gov/servlets/purl/10440135">Visual Sudoku Puzzle Classification</a>. Picture a pile of labeled correct and incorrect Sudoku boards, where the model learns to classify them, but with a big twist: the supervision is only on the <i>labels</i> not the digits themselves. Oh, and the digits might not even be numbers. They can be English letters, Japanese signs, or even fashion items. Tricky, right? I'll spill more details on this puzzle later. The point is, NeSy systems shine when trained end-to-end, weaving together learning and reasoning like a cosmic tapestry.
-</p>
-
-<p align="justify">
- Among these frameworks, my personal favorite is <a href="https://arxiv.org/abs/2012.13635">Logic Tensor Networks</a>, which is actually the one I worked on during my thesis. To get LTNs, we first need to know First-Order Logic (FOL). Think of it as the language of logic, letting us craft statements like, <i>If it's furry and meows, it's a cat</i> or <i>is_furry(x) & is_meowing(x) → is_cat(x)</i>. The latter is an FOL statement: a tidy rule for reasoning. LTNs take these FOL statements and magically transform them into NNs. Train that network, and boom! The logical rule gets applied to any data you throw at it.
+ Among those frameworks, my personal favorite is <a href="https://arxiv.org/abs/2012.13635">Logic Tensor Networks</a>, which is actually the one I also worked on during my thesis. To get LTNs, we first need to know First-Order Logic (FOL). Think of it as the <i>language of logic</i>, which lets us craft statements like <i>If it's furry and meows, it's a cat</i> or <i>is_furry(x) & is_meowing(x) → is_cat(x)</i>. The latter is literally an FOL statement: a tidy rule for symbolic reasoning. LTNs take these FOL statements and gracefully transform them into NNs. Train that network, and boom! The logical rule gets applied to any data you throw at it.
 </p>
 
 <p align="justify">
@@ -47,13 +47,21 @@
 ## Challenge
 
 <p align="justify">
- NeSy systems are the bee's knees, and some even believe the next paradigm shift in AI will come courtesy of NeSy. But, another old saying goes, <q>every coin has two sides</q>. There are still hurdles to jump, and for my thesis, I focused on a triple-threat challenge in current NeSy visual reasoning systems. Some approaches are slick but stubborn, locked into a fixed set of logical rules with zero wiggle room to adapt to new ones. Others are more flexible, dynamically extracting underlying logical rules from data; but good luck explaining how they got there or what they even are! Newer systems have tried to bridge this gap, but their rules lack formality; meaning they're too wordy for machines to verify without a human poking around. So, the million-dollar question is: can we build a NeSy system for visual reasoning that's flexible, explainable, and formal, all at once?
+ NeSy systems are the <i>bee's knees</i>, and <a href="https://www.linkedin.com/posts/gary-marcus-b6384b4_how-o3-and-grok-4-accidentally-vindicated-activity-7350215211166953472-iN8p">some</a> even believe <i>the next paradigm shift in AI</i> will come courtesy of NeSy. However, another old saying goes, <q>every coin has two sides</q>. There are still hurdles to jump, and for my thesis, I focused on a <i>triple-threat challenge</i> in current NeSy visual reasoning frameworks. But before jumping into that rabbit hole, let's quickly review visual reasoning.
+</p>
+
+<p align="justify">
+ Visual reasoning is AI's version of playing visual detective; taking in images and <i>not just seeing them</i>, but <i>also understanding what they mean</i> logically. It's like asking your AI to look at a puzzle board and figure out if the rules are broken, or scanning a scene to deduce whether the cat is plotting world domination or just napping. And, that's actually the reason why the Sudoku task is what I chose to study during my thesis: the task is about both <i>seeing</i> the board and <i>detecting</i> if it follows the no-repeats-in-row-or-column rule.
+</p>
+
+<p align="justify">
+ Okay, let's now unpack that triple-threat challenge. The first prong: some approaches are slick but stubborn, locked into a fixed set of logical rules with zero wiggle room to adapt to new ones. The second: others are more flexible, dynamically extracting underlying logical rules from data; but good luck explaining what they even are! The third: newer systems have tried to bridge this gap, but their rules lack formality; meaning they're too wordy for machines to verify without a human poking around. So, the million-dollar question is: can we build a NeSy system for visual reasoning that's <i>flexible, explainable, and formal</i>, all at once?
 </p>
 
 ## Conceptual Solution
 
 <p align="justify">
- My general idea to crack this challenge is the system sketched below. It kicks off with two inputs: textual data (instructions or descriptions) and visual data (the actual images). These get tossed into a context generator, which mashes them together into a unified context. From there, a rule generator grabs this context and whips up symbolic rules. Meanwhile, the visual input also feeds into a visual processor to cook up visual symbols. Then, a rule verifier swoops in, applying those symbolic rules to the visual symbols to deliver the final output.
+ My <i>general idea</i> to crack this challenge is the system sketched below. It kicks off with two inputs: textual data (instructions or descriptions) and visual data (the actual images). These get tossed into a context generator, which mashes them together into a unified context. From there, a rule generator grabs this context and whips up symbolic rules. Meanwhile, the visual input also feeds into a visual processor to cook up visual symbols. Then, a rule verifier swoops in, applying those symbolic rules to the visual symbols to deliver the final output.
 </p>
 
 <p align="center">
@@ -61,13 +69,13 @@
 </p>
 
 <p align="justify">
- Now, here's where the party starts: the final output loops back into the context generator, acting like a mid-game coach dishing out feedback. This means the system can spot its own fumbles and fix them on the fly; sort of inspired by Reinforcement Learning (RL). Plus, the rule generator itself gets in on the feedback action, tweaking its own rules if things go off the rails. This setup nails the trifecta I mentioned earlier: it's flexible (adapts to different tasks), explainable (rules are in clear symbolic language, not a mathematical tensor nightmare), and formal (rules are machine-verifiable, no human babysitting required).
+ Now, here's where the party starts: the final output loops back into the context generator, acting like a mid-game coach dishing out feedback. This means the system can spot its own fumbles and <i>fix</i> them on the fly; sort of inspired by Reinforcement Learning (RL). Plus, the rule generator itself gets in on the feedback action, tweaking its own rules if things go off the rails. This setup nails the trifecta I mentioned earlier: it's flexible (adapts to different tasks), explainable (rules are in clear symbolic language, not a mathematical tensor nightmare), and formal (rules are machine-verifiable, no human babysitting required).
 </p>
 
 ## Functional Solution
 
 <p align="justify">
- Alright, let's get down to the nuts and bolts of how this idea comes to life. Depending on the functional designs you pick for each module described, there are many ways to pull this off. For my thesis, given the time and resources I had, I went for the simplest setup I could find, as shown in the figure below. I used a prompt engineer to carve prompts and act as the context generator. Then, a Vision Language Model (VLM) took those prompts and churned out symbolic rules in FOL. For the visual processor, I leaned on a straightforward Convolutional Neural Network (CNN) and used its output embeddings as the visual symbols. Finally, a Dynamic Logic Tensor Network (D-LTN) stepped up as the rule verifier to deliver the final output.
+ Alright, let's get down to the nuts and bolts of how this idea comes to life. Depending on the <i>functional designs</i> you pick for each module described, there are many ways to pull this off. For my thesis, given the time and resources I had, I went for the simplest setup I could find, as shown in the figure below. I used a prompt engineer to carve prompts and act as the context generator. Then, a Vision Language Model (VLM) took those prompts and churned out symbolic rules in FOL. For the visual processor, I leaned on a straightforward Convolutional Neural Network (CNN) and used its output embeddings as the visual symbols. Finally, a Dynamic Logic Tensor Network (D-LTN) stepped up as the rule verifier to deliver the final output.
 </p>
 
 <p align="center">
@@ -75,9 +83,9 @@
 </p>
 
 <p align="justify">
- While this functional setup might look simplistic at the first look, the D-LTN is the real MVP of my work. In that module, I dynamically convert symbolic rules into LTNs, which required building a parser for FOL and crafting an autonomous pipeline to train and test those D-LTNs. To make that happen, I used <a href="https://lark-parser.readthedocs.io/en/stable/">Lark</a> and sprinkled in some meta-programming magic to create a Python template that reads and understands FOL as a logic-loving compiler. This pipeline is the secret sauce, letting the system hum along smoothly while keeping flexible, explainable, and formality promises.
+ While this functional setup might look simplistic at the first look, the D-LTN was the <i>real challenge</i> of my work. In that module, I dynamically convert symbolic rules into LTNs, which required building a parser for FOL and crafting an autonomous pipeline to train and test those D-LTNs. To make that happen, I used <a href="https://lark-parser.readthedocs.io/en/stable/">Lark</a> and sprinkled in some <i>meta-programming</i> magic to create a Python template that reads and understands FOL as a logic-loving compiler. This pipeline is the secret sauce, letting the system hum along smoothly while keeping flexible, explainable, and formality promises.
 
-## Running the Codes
+## The Codes
 
 <p align="justify">
   Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. You can clone it locally or on cloud, but there's a better way. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say you call it <code>nesy</code> and put it in your home folder like a sane person. Then, simply copy <a href="data_collection.ipynb">data_collection.ipynb</a>, <a href="main_algorithm.ipynb">main_algorithm.ipynb</a>, <a href="visudo_scripts.zip">visudo_scripts.zip</a>, and the <a href="datasets">datasets</a> folder to it. That's it, you can run the codes now. I will explain these files in the following.
@@ -86,7 +94,7 @@
 ### Data Collection
 
 <p align="justify">
- The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> is for collecting the data used for the Sudoku task I was talking about. If you don't want to do this, you can skip this part. I've already collected the required data in the <a href="">datasets</a> folder. However, if you're curious, you can create your own dataset as well. 
+ The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> is for collecting the data used for the Sudoku task I was talking about. If you don't want to do this, you can skip this part. I've already collected the required data in the <a href="datasets">datasets</a> folder. However, if you're curious, here I explain how I created it or how you do it on your own. I tried my best to make the code 
 </p>
 
 ### Main Algorithm
