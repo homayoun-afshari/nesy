@@ -91,14 +91,18 @@
   Finally, it's time to roll up our sleeves and get into the real business. I've prepared a minimalistic implementation of this project in the repository. You could clone it locally or spin it up in the cloud, but let's keep things simple: I've tuned the code to run smoothly on Google Colab, which means you'll need a bit of Google Drive space as well. To get started, create a folder in your Drive and name it whatever like. Let's say you go with <code>nesy</code> and put it into your home folder like a sane person. Then, just drag and drop <a href="data_collection.ipynb">data_collection.ipynb</a>, <a href="main_algorithm.ipynb">main_algorithm.ipynb</a>, <a href="visudo_scripts.zip">visudo_scripts.zip</a>, and <a href="datasets">datasets</a> into <code>nesy</code>. That's it, you're ready to run the show. I'll break down these files next.
 </p>
 
+<p>
+ A quick heads-up about <a href="visudo_scripts.zip">visudo_scripts.zip</a>. I pulled these scripts from the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> behind the Sudoku task. So, the datasets aren't my artwork; they're collected using the exact same method described in their paper and repository. That's actually why I keep saying <q>collection</q> instead of <q>generate</q>. If you want the full scoop on this project, definitely check out that original repository.
+</p>
+
 ### Data Collection
 
 <p align="justify">
- The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> is for collecting the data used for the Sudoku task I was talking about. If you don't want to do this, you can skip this part. I've already collected the required data in the <a href="datasets">datasets</a> folder. However, if you're curious, here I explain how I created it or how you do it on your own. I tried my best to make the code descriptive enough. The most important points are:
+ The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> handles collecting the data for the Sudoku task. If you're feeling lazy (no judgment), you can skip this entirely. The datasets you need are already collected in <a href="datasets">datasets</a>. But if you're the curious type who wants to know how I did it or roll your own, here's the lowdown. I tried to make the code self-explanatory, but here are the key bits:
  <ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
+  <li><b>Setting up folder names</b>: In the <code>Notebook Initialization</code> section, you'll spot two crucial constants. First, <code>DRIVE_ROOT_DIR</code> points to your <code>nesy</code> folder. Second, <code>DRIVE_DATASET_DIR</code> names the subfolder inside <code>nesy</code> where your collected datasets live. Pro tip: I've already run this beast for hours and gathered everything you need, so it's tucked away in datasets. But to avoid chaos, you could tweak <code>DRIVE_DATASET_DIR</code> and collect your own fresh batch.</li>
+  <li><b>Dataset collection and visualization</b>: Scroll down to the <code>Collection</code>, subsection, where you'll find two functions: <code>collect</code> and <code>visualize</code>. Their names are pretty self-explanatory. The magic happens in their arguments: use <code>source_name</code> to pick the digit style for your Sudoku boards (numbers, letters, whatever); set <code>board_dim</code> for the board size; and choose <code>split</code> as the data division you want to collect. Check out the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> to know more about these settings.</li>
+  <li><b>Transferring datasets to Google Drive</b>: At the end of the notebook, there's a little cell that zips everything up and ships your datasets to your <code>datasets</code> folder. Run it, and you're golden.</li>
  </ul>
 </p>
 
