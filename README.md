@@ -80,12 +80,14 @@
 ## Running the Codes
 
 <p align="justify">
-  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say you call it <code>nesy</code> like a sane person.
+  Finally, it's time to get into buisniness. I have prepared a minimalistic implementation of this project in this repositoty. You can clone it locally or on cloud, but there's a better way. To simplify things, I've changed the codes to run on Google Colab, which means you'll also need to use your Google Drive, but not much of it. So, to begin, make a folder in your drive, and name it whatever you like. Let's say you call it <code>nesy</code> and put it in your home folder like a sane person. Then, simply copy <a href="data_collection.ipynb">data_collection.ipynb</a>, <a href="main_algorithm.ipynb">main_algorithm.ipynb</a>, and the <a href="">datasets</a> folder to it. That's it, you can run the codes now.
 </p>
 
-### Initialization
+### Data Collection
 
-### Data Preparation
+<p align="justify">
+ The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> is for collecting the data used for the Sudoku task I was talking about. If you don't want to do this, you can skip this part. I've already collected the required data in the <a href="">datasets</a> folder. However, if you're curious, you can create your own dataset as well. 
+</p>
 
 ### Main Algorithm
 
