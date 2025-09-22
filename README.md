@@ -99,16 +99,51 @@
 
 <p align="justify">
  The notebook <a href="data_collection.ipynb">data_collection.ipynb</a> handles collecting the data for the Sudoku task. If you're feeling lazy (no judgment), you can skip this entirely. The datasets you need are already collected in <a href="prepared_datasets">prepared_datasets</a>. But if you're the curious type who wants to know how I did it or roll your own, here's the lowdown. I tried to make the code self-explanatory, but here are the key bits:
+ 
  <ul>
-  <li><b>Setting up folder names</b>: In the <code>Notebook Initialization</code> section, you'll spot two crucial constants. First, <code>DRIVE_ROOT_DIR_PATH</code> stores the path to your <code>nesy</code> folder (for me, it's <code>'MyDrive/nesy'</code>). Second, <code>DRIVE_DATASET_DIR</code> names the subfolder inside your <code>nesy</code> folder where your collected datasets live (for me, it's just <code>'prepared_datasets'</code>). Again: I've already run this beast for hours and gathered everything you need, which it's tucked away in <a href="prepared_datasets">prepared_datasets</a>. But to avoid chaos, you could tweak <code>DRIVE_DATASET_DIR</code> and collect your own fresh batch.</li>
-  <li><b>Dataset collection and visualization</b>: Scroll down to the <code>Collection</code> subsection, where you'll find two functions: <code>collect</code> and <code>visualize</code>. Their names are pretty self-explanatory. The magic happens in their arguments: use <code>source_name</code> to pick the digit style for your Sudoku boards (numbers, letters, whatever); set <code>board_dim</code> for the board size; and choose <code>split</code> as the data division you want to collect. Check out the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> to know more about these settings.</li>
-  <li><b>Transferring datasets to Google Drive</b>: At the end of the notebook, there's a little cell that zips everything up and ships your datasets to your <code>datasets</code> folder. Run it, and keep calm.</li>
+  
+  <li><b>Setting up constants</b>: In the <code>Notebook Initialization</code> section, you'll spot two crucial constants. First, <code>DRIVE_ROOT_DIR_PATH</code> stores the path to your <code>nesy</code> folder (for me, it was <code>'MyDrive/nesy'</code>). Second, <code>DRIVE_DATASETS_DIR</code> names the subfolder inside your <code>nesy</code> folder where your collected datasets live (I set it by default to <code>'prepared_datasets'</code>). Again: I've already run this beast for hours and gathered everything you need, which it's tucked away in <a href="prepared_datasets">prepared_datasets</a>. But to avoid chaos, you could tweak <code>DRIVE_DATASET_DIR</code> and collect your own fresh batch.</li>
+  
+  <li><b>Dataset collection and visualization</b>: Scroll down to the <code>Collection</code> subsection under the <code>Data Collection</code> section, where you'll find two functions: <code>collect</code> and <code>visualize</code>. Their names are pretty self-explanatory. The magic happens in their arguments: use <code>source_name</code> to pick the digit style for your Sudoku boards (I ran the code for <code>'MNIST'</code>, <code>'EMNIST'</code>, <code>'FMNIST'</code>, and <code>'KMNIST'</code>); set <code>board_dim</code> for the board size (for it was always <code>4</code>); and choose <code>split</code> as the data division you want to collect (I set it to <code>1</code> to <code>11</code>). Check out the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> to know more about these settings.</li>
+  
+  <li><b>Transferring datasets to Google Drive</b>: At the end of the notebook, there's a little cell that zips everything up and ships your datasets to the folder you specified its name by setting <code>DRIVE_DATASETS_DIR</code>. Run it, and keep calm.</li>
+ 
  </ul>
+ 
 </p>
 
 ### Main Algorithm
+<p align="justify">
+ The notebook <a href="main_algorithm.ipynb">main_algorithm.ipynb</a> contains the beating heart of the entire system. This code's also self-explanatory, but here are the most important notes:
+ 
+ <ul>
+  
+  <li><b>Setting up constants</b>: In the <code>Notebook Initialization</code> section, you'll again find some constants. Except for <code>DRIVE_ROOT_DIR_PATH</code> and <code>DRIVE_DATASETS_DIR</code> which are the same as before, you also have two others. The first one, <code>DRIVE_LOGS_DIR</code is another subfolder in your <code>nesy</code> folder that stores the logs of your experiments. Feel free to rename it for different experiments. The other cosntant, <code>GROQ_API_KEY</code>, holds the API key from <a href="https://groq.com">groq.com</a>, which gives you free inference access to open-source VLMs.</li>
+   
+   <li><b>D-LTN</b>: The <code>D-LTN</code> section is the symbolic powerhouse of the system, where I define an FOL grammar for parsing logic statements, create classes for different LTN building blocks, and build a dynamic converter that turns FOL into D-LTNs. Don't worry if it looks like hieroglyphics right now; this part requires a solid NeSy and LTN background to truly appreciate. Once you're fluent, you'll find this section quite straightforward.</li>
+   
+   <li><b>CNN</b>: In the <code>Groundings Tools</code> subsection under the <code>Main Algorithms</code> section, you'll find the <code>EncoderNet</code> class, which is the humble CNN I mentioned earlier that forms the neural workhorse of the system.</li>
+   
+   <li><b>Main Function</b>: In the <code>Operation Tools</code> subsection under the <code>Main Algorithms</code> section, there's a very import function, called <code>main</code>. This function takes a dataset, an FOL statement, and a bunch of other arguments with descriptive names, then performs a single iteration of the system.</li>
+
+   <li><b>Hyper-Parameter Tuning</b>: The  <code>Hyperparameter Tuning</code> subsection under the <code>Main Algorithms</code> section is where we tune the CNN. Any time you run this cell, new logs will be pushed in the folder you specified its name by setting <code>DRIVE_LOGS_DIR</code>.</li>
+
+   <li><b>Rule Generation</b>: The <code>Rule Generation</code> subsection under the <code>Main Algorithms</code> section implements the main system loop I described earlier. If you've nailed all the previous steps, you'll be able to see how the system can successfully generate the rules of Sudoku in FOL. The results of this part are also logged.</li>
+
+   <li><b>Experimental Tests</b>: The <code>Experimental Tests</code> subsection under the <code>Main Algorithms</code> section lets you put the generated FOL statements (or your own custom ones) under microscope. This is where CNN and D-LTN are joined to enable comparison against current methods in the literature. All results get logged, because in science, bragging rights come with receipts.</li>
+
+ </ul>
+</p>
 
 ## Outcome
 
-## Acknowledgement
+### Hyper-Parameter tuning
 
+### Rule Generation
+
+### Comparison to State-of-the-Art
+
+## Acknowledgement
+<p align="justify">
+ I'd like to express my deepest gratitude to my advisor, <a href="https://www.polito.it/personale?p=lia.morra">Professor Lia Morra</a>, for her continuous guidance, support, and encouragement throughout this research. I'm also thankful to the members of her team, especially Ph.D candidate <a hre="https://www.polito.it/personale?p=alessandro.russo">Alessandro Russo</a>, for his valuable feedback.
+</p>
