@@ -138,6 +138,41 @@
 ## Outcome
 
 ### Hyper-Parameter tuning
+Alright, let's talk about the unsexy but absolutely crucial part of any AI project: hyperparameter tuning. Think of it as trying on 192 different outfits for your CNN block until you find the one that makes it look sharp *and* comfortable. As I mentioned earlier, the rule generation loop needs both the CNN and D-LTN to be properly tuned beforehand, so we built a comprehensive hyperparameter grid (shown below) that tests 192 different configurations. For the D-LTN—while it's not a neural network per se—we still had to consider how it plays nice with different datasets. So, we ran each configuration through four separate development loops using the 11th split of the Visudo-PC dataset, but with digits from MNIST, EMNIST, KMNIST, and FMNIST. That bumped our total experiments to a whopping 768 runs. The average test performance across these four "flavors" helped us pick the winning combo.
+
+Now, for the D-LTN's initialization, we needed a manually crafted FOL rule that captures the core Sudoku constraint: no two identical digits can hang out in the same row, column, or block (unless they're the same cell, of course). We boiled this down to a crisp rule: if two cells have the same value, they must either be the same location *or* not share a row, column, or block. In FOL speak, that's:
+
+```
+forall x1, x2
+    P_same_value(x1, x2) implies
+    P_same_loc(x1, x2) | (!P_same_row(x1, x2) &
+                          !P_same_col(x1, x2) &
+                          !P_same_block(x1, x2))
+```
+
+This rule is the logical backbone of Sudoku validity—like the "no double-dipping" rule at a fancy dinner party, but for numbers.
+
+Here's the hyperparameter grid we explored:
+
+| Hyperparameter | Alternatives |
+|---------------|--------------|
+| `cnn_dims` | `(8, 16)`, `(16, 32)`, `(32, 64)` |
+| `kernel_dims` | `(4, 4)`, `(2, 2)` |
+| `embed_dims` | `(4,)`, `(16,)`, `(64, 4)`, `(64, 16)` |
+| `drop_prob` | `0.1`, `0.2`, `0.3` |
+| `use_softmax` | `False`, `True` |
+
+This exhaustive search spanned architectural choices, embedding sizes, regularization levels, and output strategies, giving us the best shot at a robust model. And the results? Drumroll, please...
+
+| ID | `cnn_dims` | `kernel_dims` | `embed_dims` | `drop_prob` | `use_softmax` | Avg Test AUC | Avg Test Accuracy |
+|----|------------|---------------|--------------|-------------|---------------|--------------|-------------------|
+| 1 | `(32, 64)` | `(4, 4)` | `(64,)` | `0.2` | `True` | 0.9560 | 85.50% |
+| 2 | `(32, 64)` | `(4, 4)` | `(64, 4)` | `0.2` | `True` | 0.9528 | 86.25% |
+| 3 | `(32, 64)` | `(4, 4)` | `(64,)` | `0.1` | `True` | 0.9523 | 86.12% |
+| 4 | `(16, 32)` | `(4, 4)` | `(64,)` | `0.2` | `True` | 0.9477 | 84.87% |
+| 5 | `(16, 32)` | `(4, 4)` | `(4,)` | `0.2` | `True` | 0.9458 | 82.50% |
+
+We prioritized AUC (the gold standard in the literature) and crowned the top config: `cnn_dims=(32, 64)`, `kernel_dims=(4, 4)`, `embed_dims=(64,)`, `drop_prob=0.2`, and `use_softmax=True`. It's like finding the perfect recipe after burning a few batches—not glamorous, but oh-so-satisfying when it works.
 
 ### Rule Generation
 
@@ -145,5 +180,5 @@
 
 ## Acknowledgement
 <p align="justify">
- I'd like to express my deepest gratitude to my advisor, <a href="https://www.polito.it/personale?p=lia.morra">Professor Lia Morra</a>, for her continuous guidance, support, and encouragement throughout this research. I'm also thankful to the members of her team, especially Ph.D candidate <a hre="https://www.polito.it/personale?p=alessandro.russo">Alessandro Russo</a>, for his valuable feedback.
+ I'd like to express my deepest gratitude to my advisor, <a href="https://www.polito.it/personale?p=lia.morra">Professor Lia Morra</a>, for her continuous guidance, support, and encouragement throughout this research. I'm also thankful to the members of her team, especially <a href="https://www.polito.it/personale?p=alessandro.russo">Ph.D candidate Alessandro Russo</a>, for his valuable feedback.
 </p>
