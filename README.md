@@ -3,7 +3,7 @@
 ## A Bit of History
 
 <p align="justify">
- If you're new to Artificial Intelligence (AI), you might think Neural Networks (NNs) are the whole story. You might even believe AI and NNs are practically the same thing. Well, you're almost right! In a way, that's a fair assumption if we're talking <i>modern AI</i>, which is basically a love letter to neural methods. In fact, most of the field is obsessed with training and tweaking those glorious neurons. However, the history of AI tells a bit different story. Once upon a time, AI was all about <i>logical rules</i>, fondly known as <a href="https://en.wikipedia.org/wiki/GOFAI">Good-Old-Fashioned AI (GOFAI)</a>. And, my goodness, those methods worked like a charm! For instance, they powered expert systems that could reason through problems with the precision of a mathematician solving a crossword puzzle.
+ If you're new to Artificial Intelligence (AI), you might think Neural Networks (NNs) are the <i>whole</i> story. You might even believe AI and NNs are practically the same thing. Well, you're almost right! In a way, that's a fair assumption if we're talking <i>modern AI</i>, which is basically a love letter to neural methods. In fact, most of the field is obsessed with training and tweaking those glorious neurons. However, the history of AI tells a different story. Once upon a time, AI was <i>all</i> about logical rules, fondly known as <a href="https://en.wikipedia.org/wiki/GOFAI">Good-Old-Fashioned AI (GOFAI)</a>. And, my goodness, those methods worked like a <a href="https://en.wikipedia.org/wiki/Mycin">charm</a>! For instance, MYCIN used hand-crafted logical rules to diagnose bacterial infections with a performance comparable to human experts.
 </p>
 
 <p align="center">
