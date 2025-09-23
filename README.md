@@ -75,7 +75,7 @@
 ## Functional Solution
 
 <p align="justify">
- Alright, let's get down to the nuts and bolts of how this idea comes to life. Depending on the functional designs <i>you pick</i> for each module described, there are many ways to pull this off. For my thesis, given the time and resources I had, I went for the simplest setup I could find. As shown in the figure below, I used a prompt engineer to carve prompts and act as the context generator. Then, a Vision Language Model (VLM) took those prompts and churned out symbolic rules in FOL. For the visual processor, I leaned on a straightforward Convolutional Neural Network (CNN) and used its output embeddings as the visual symbols. Finally, a Dynamic Logic Tensor Network (D-LTN) stepped up as the rule verifier to deliver the final output.
+ Alright, let's get down to the nuts and bolts of how this idea comes to life. Depending on the functional designs <i>you pick</i> for each module described, there are many ways to pull this off. For my thesis, given the time and resources I had, I went for the simplest setup I could find. As shown in the figure below, I used a prompt engineer to carve prompts and act as the context generator. Then, I used a Vision Language Model (VLM) to take those prompts and churn out symbolic rules in FOL. For the visual processor, I leaned on a straightforward Convolutional Neural Network (CNN) and used its output embeddings as the visual symbols. Finally, a Dynamic Logic Tensor Network (D-LTN) stepped up as the rule verifier to deliver the final output.
 </p>
 
 <p align="center">
@@ -92,7 +92,7 @@
 </p>
 
 <p>
- Just a quick heads-up about <a href="visudo_scripts.zip">visudo_scripts.zip</a>. I pulled these scripts from the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> behind the Sudoku task. So, the datasets aren't my artwork; they're collected using the exact same method described in their paper and repository. That's actually why I keep saying <q>collect</q> instead of <q>generate</q>. If you want the full scoop on this project, definitely check out that original repository.
+ Just a quick heads-up about <a href="visudo_scripts.zip">visudo_scripts.zip</a>. I pulled these scripts from the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> behind the Sudoku task. So, the datasets aren't my artwork; they're collected using the exact same method described in that repository. That's actually why I keep saying <q>collect</q> instead of <q>generate</q>. If you want the full scoop on this project, definitely check out that original repository.
 </p>
 
 ### Data Collection
@@ -102,9 +102,9 @@
  
  <ul>
   
-  <li><b>Setting up constants</b>: In the <code>Notebook Initialization</code> section, you'll spot two crucial constants. First, <code>DRIVE_ROOT_DIR_PATH</code> stores the path to your <code>nesy</code> folder (for me, it was <code>'MyDrive/nesy'</code>). Second, <code>DRIVE_DATASETS_DIR</code> names the subfolder inside your <code>nesy</code> folder where your collected datasets live (I set it by default to <code>'prepared_datasets'</code>). Again: I've already run this beast for hours and gathered everything you need, which it's tucked away in <a href="prepared_datasets">prepared_datasets</a>. But to avoid chaos, you could tweak <code>DRIVE_DATASET_DIR</code> and collect your own fresh batch.</li>
+  <li><b>Setting up constants</b>: In the <code>Notebook Initialization</code> section, you'll spot two crucial constants. First, <code>DRIVE_ROOT_DIR_PATH</code> stores the path to your <code>nesy</code> folder (for me, it's <code>'MyDrive/nesy'</code>). Second, <code>DRIVE_DATASETS_DIR</code> names the subfolder inside your <code>nesy</code> folder where your collected datasets live (I set it by default to <code>'prepared_datasets'</code>). Again: I've already run this beast for hours and gathered everything you need, which it's tucked away in <a href="prepared_datasets">prepared_datasets</a>. But to avoid chaos, you could tweak <code>DRIVE_DATASET_DIR</code> and collect your own fresh batch.</li>
   
-  <li><b>Dataset collection and visualization</b>: Scroll down to the <code>Collection</code> subsection under the <code>Data Collection</code> section, where you'll find two functions: <code>collect</code> and <code>visualize</code>. Their names are pretty self-explanatory. The magic happens in their arguments: use <code>source_name</code> to pick the digit style for your Sudoku boards (I ran the code for <code>'MNIST'</code>, <code>'EMNIST'</code>, <code>'FMNIST'</code>, and <code>'KMNIST'</code>); set <code>board_dim</code> for the board size (for it was always <code>4</code>); and choose <code>split</code> as the data division you want to collect (I set it to <code>1</code> to <code>11</code>). Check out the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> to know more about these settings.</li>
+  <li><b>Dataset collection and visualization</b>: Scroll down to the <code>Collection</code> subsection under the <code>Data Collection</code> section, where you'll find two functions: <code>collect</code> and <code>visualize</code>. Their names are pretty self-explanatory. The magic happens in their arguments: use <code>source_name</code> to pick the digit style for your Sudoku boards (I ran the code for <code>'MNIST'</code>, <code>'EMNIST'</code>, <code>'FMNIST'</code>, and <code>'KMNIST'</code>); set <code>board_dim</code> for the board size (for me, it was <code>4</code>); and choose <code>split</code> as the data division you want to collect (I set it to <code>1</code> to <code>11</code>). Check out the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> to know more about these settings.</li>
   
   <li><b>Transferring datasets to Google Drive</b>: At the end of the notebook, there's a little cell that zips everything up and ships your datasets to the folder you specified its name by setting <code>DRIVE_DATASETS_DIR</code>. Run it, and keep calm.</li>
  
@@ -122,15 +122,15 @@
    
    <li><b>D-LTN</b>: The <code>D-LTN</code> section is the symbolic powerhouse of the system, where I define an FOL grammar for parsing logic statements, create classes for different LTN building blocks, and build a dynamic converter that turns FOL into D-LTNs. Don't worry if it looks like hieroglyphics right now; this part requires a solid NeSy and LTN background to truly appreciate. Once you're fluent, you'll find this section quite straightforward.</li>
    
-   <li><b>CNN</b>: In the <code>Groundings Tools</code> subsection under the <code>Main Algorithms</code> section, you'll find the <code>EncoderNet</code> class, which is the humble CNN I mentioned earlier that forms the neural workhorse of the system.</li>
+   <li><b>CNN</b>: In the <code>Groundings Tools</code> subsection under the <code>Main Algorithms</code> section, you'll find the <code>EncoderNet</code> class, which represents the humble CNN I mentioned earlier.</li>
    
    <li><b>Main Function</b>: In the <code>Operation Tools</code> subsection under the <code>Main Algorithms</code> section, there's a very import function, called <code>main</code>. This function takes a dataset, an FOL statement, and a bunch of other arguments with descriptive names, then performs a single iteration of the system.</li>
 
-   <li><b>Hyper-Parameter Tuning</b>: The <code>Hyperparameter Tuning</code> subsection under the <code>Main Algorithms</code> section is where we tune the CNN. Any time you run this cell, new logs will be pushed in the folder you specified its name by setting <code>DRIVE_LOGS_DIR</code>.</li>
+   <li><b>Hyper-Parameter Tuning</b>: The <code>Hyperparameter Tuning</code> subsection under the <code>Main Algorithms</code> section is where the CNN is tuned. Any time you run this cell, new logs will be pushed in the folder you specified its name by setting <code>DRIVE_LOGS_DIR</code>.</li>
 
-   <li><b>Rule Generation</b>: The <code>Rule Generation</code> subsection under the <code>Main Algorithms</code> section implements the main system loop I described earlier. If you've nailed all the previous steps, you'll be able to see how the system can successfully generate the rules of Sudoku in FOL. The results of this part are also logged.</li>
+   <li><b>Rule Generation</b>: The <code>Rule Generation</code> subsection under the <code>Main Algorithms</code> section implements the main system loop I also described earlier. If you've nailed all the previous steps, you'll be able to see how the system can successfully generate the rules of Sudoku in FOL. The results of this part are also logged.</li>
 
-   <li><b>Experimental Tests</b>: The <code>Experimental Tests</code> subsection under the <code>Main Algorithms</code> section lets you put the generated FOL statements (or your own custom ones) under microscope. This is where CNN and D-LTN are joined to enable comparison against current methods in the literature. All results get logged, because in science, bragging rights come with receipts.</li>
+   <li><b>Experimental Tests</b>: The <code>Experimental Tests</code> subsection under the <code>Main Algorithms</code> section lets you put the generated FOL statements (or your own custom ones) under microscope. This is where CNN and D-LTN are joined to enable comparison against current methods in the literature. All results get logged, because in science, bragging rights come with receipts!</li>
 
  </ul>
 </p>
