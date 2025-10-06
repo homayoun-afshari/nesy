@@ -3,7 +3,7 @@
 ## A Bit of History
 
 <p align="justify">
- If you're new to Artificial Intelligence (AI), you might think Neural Networks (NNs) are the <i>whole</i> story. You might even believe AI and NNs are practically the same thing. Well, you're almost right! In a way, that's a fair assumption if we're talking <i>modern AI</i>, which is basically a love letter to neural methods. In fact, most of the field is obsessed with training and tweaking those glorious neurons. However, the history of AI tells a different story. Once upon a time, AI was <i>all</i> about logical rules, fondly known as <a href="https://en.wikipedia.org/wiki/GOFAI">Good-Old-Fashioned AI (GOFAI)</a>. And, my goodness, those methods worked like a <i>charm</i>! For instance, <a href="https://en.wikipedia.org/wiki/El_Ajedrecista">El Ajedrecista</a>, the Quevedo's chess automaton could play king-and-rook endgames entirely on its own in 1912.
+ If you're new to Artificial Intelligence (AI), you might think Neural Networks (NNs) are the <i>whole</i> story. You might even believe AI and NNs are practically the same thing. Well, you're almost right! In a way, that's a fair assumption if we're talking <i>modern AI</i>, which is basically a love letter to neural methods. In fact, most of the field is obsessed with training and tweaking those glorious neurons. However, the history of AI tells a different story. Once upon a time, AI was <i>all</i> about logical rules, known as <a href="https://en.wikipedia.org/wiki/GOFAI">Good-Old-Fashioned AI (GOFAI)</a>. And, my goodness, those methods worked like a <i>charm</i>! For instance, <a href="https://en.wikipedia.org/wiki/El_Ajedrecista">El Ajedrecista</a>, the Quevedo's chess automaton could play king-and-rook endgames entirely on its own in 1912.
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@
 ## NeSy Frameworks
 
 <p align="justify">
- Over the past few years, a <i>parade</i> of NeSy methods has marched onto the scene. Since NeSy is more a <i>paradigm</i> than a single trick up the AI sleeve, these methods double as frameworks, each with its own quirky way of blending NNs with symbolic reasoning. Check out <a href="https://harshakokel.com/posts/neurosymbolic-systems/">Types of Neuro-Symbolic Systems</a>, which lays out <i>Kautz's six-level taxonomy of NeSy</i>. The big takeaway? These frameworks aren't just slapping neural and symbolic together like a sandwich; they're <i>carefully</i> engineering systems to reason and learn in harmony. For a deeper dive, also sneak a peek at <a href="https://arxiv.org/abs/2305.00813">Neurosymbolic AI - Why, What, and How</a>.
+ Over the past few years, a <i>parade</i> of NeSy methods has marched onto the scene. Since NeSy is more a <i>paradigm</i> than a single trick up the AI sleeve, these methods double as frameworks, each with its own quirky way of blending NNs with symbolic reasoning. Check out <a href="https://harshakokel.com/posts/neurosymbolic-systems/">Types of Neuro-Symbolic Systems</a>, which lays out <i>Kautz's six-level taxonomy of NeSy</i>. The big takeaway? These frameworks aren't just slapping neural and symbolic together like a sandwich; they're <i>carefully</i> engineered systems to reason and learn in harmony. For a deeper dive, also sneak a peek at <a href="https://arxiv.org/abs/2305.00813">Neurosymbolic AI - Why, What, and How</a>.
 </p>
 
 <p align="justify">
@@ -47,7 +47,7 @@
 ## Challenge
 
 <p align="justify">
- NeSy systems are the <i>bee's knees</i>, and <a href="https://www.linkedin.com/posts/gary-marcus-b6384b4_how-o3-and-grok-4-accidentally-vindicated-activity-7350215211166953472-iN8p">some</a> even believe the <i>next</i> paradigm shift in AI will come courtesy of NeSy. However, another old saying goes, <q>every coin has two sides</q>. There are still hurdles to jump, and for my thesis, I focused on a <i>triple-threat challenge</i> in current NeSy visual reasoning frameworks. But before jumping into that rabbit hole, let's quickly review visual reasoning.
+ NeSy systems are the <i>bee's knees</i>, and <a href="https://www.linkedin.com/posts/gary-marcus-b6384b4_how-o3-and-grok-4-accidentally-vindicated-activity-7350215211166953472-iN8p">some</a> even believe the <i>next</i> paradigm shift in AI will come courtesy of NeSy. However, there are still hurdles to jump, and for my thesis, I focused on a <i>triple-threat challenge</i> in current NeSy visual reasoning frameworks. But before jumping into that rabbit hole, let's quickly review visual reasoning.
 </p>
 
 <p align="justify">
@@ -69,13 +69,13 @@
 </p>
 
 <p align="justify">
- Now, here's where the party starts: the final output loops back into the context generator, acting like a mid-game coach dishing out <i>feedback</i>. This means the system can spot its own fumbles and <i>fix</i> them on the fly; sort of inspired by Reinforcement Learning (RL). Plus, the rule generator itself gets in on the feedback action, tweaking its own rules if things go off the rails. This setup targets the trifecta I mentioned earlier: it's flexible (adapts to different tasks), explainable (rules are in clear symbolic language, not mathematical tensor nightmares), and formal (rules are machine-verifiable, no human babysitting required).
+ Now, here's where the party starts: the final output loops back into the context generator, acting like a mid-game coach dishing out <i>feedback</i>. This means the system can spot its own fumbles and <i>fix</i> them on the fly; sort of inspired by Reinforcement Learning (RL). Plus, the rule generator itself can also get in on the feedback action, tweaking its own rules if things go off the rails. This setup targets the trifecta I mentioned earlier: it's flexible (adapts to different tasks), explainable (rules are in clear symbolic language, not mathematical tensor nightmares), and formal (rules are machine-verifiable, no human babysitting required).
 </p>
 
 ## Functional Solution
 
 <p align="justify">
- Alright, let's get down to the nuts and bolts of how this idea comes to life. Depending on the functional designs <i>you pick</i> for each module described, there are many ways to pull this off. For my thesis, given the time and resources I had, I went for the simplest setup I could find. As shown in the figure below, I used a prompt engineer to carve prompts and act as the context generator. Then, I used a Vision Language Model (VLM) to take those prompts and churn out symbolic rules in FOL. For the visual processor, I leaned on a straightforward Convolutional Neural Network (CNN) and used its output embeddings as the visual symbols. Finally, a Dynamic Logic Tensor Network (D-LTN) stepped up as the rule verifier to deliver the final output.
+ Let's now get down to the nuts and bolts of how this idea comes to life. Depending on the functional designs <i>you pick</i> for each module described, there are many ways to pull this off. For my thesis, given the time and resources I had, I went for the simplest setup I could find. As shown in the figure below, I used a prompt engineer to carve prompts and act as the context generator. Then, I used a Vision Language Model (VLM) to take those prompts and churn out symbolic rules in FOL. For the visual processor, I leaned on a straightforward Convolutional Neural Network (CNN) and used its output embeddings as the visual symbols. Finally, a Dynamic Logic Tensor Network (D-LTN) stepped up as the rule verifier to deliver the final output.
 </p>
 
 <p align="center">
@@ -92,7 +92,7 @@
 </p>
 
 <p>
- Just a quick heads-up about <a href="visudo_scripts.zip">visudo_scripts.zip</a>. I pulled these scripts from the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> behind the Sudoku task. So, the datasets aren't my artwork; they're collected using the exact same method described in that repository. That's actually why I keep saying <q>collect</q> instead of <q>generate</q>. If you want the full scoop on this project, definitely check out that original repository.
+ Just a quick heads-up about <a href="visudo_scripts.zip">visudo_scripts.zip</a>. I pulled these scripts from the <a href="https://github.com/linqs/visual-sudoku-puzzle-classification">original repository</a> behind the Sudoku task. So, the datasets aren't my artwork; they're collected using the exact same method described in that repository. That's actually why I'll keep saying <q>collect</q> instead of <q>generate</q> in the following. If you want the full scoop on this project, definitely check out that original repository.
 </p>
 
 ### Data Collection
