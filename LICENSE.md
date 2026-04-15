@@ -2,7 +2,7 @@
 
 Copyright (c) 2025 Homayoun Afshari
 
-This repository contains a summary of research and supplementary educational code (Jupyter notebooks) related to Neuro-Symbolic Artificial Intelligence. By accessing this repository, you agree to the following terms:
+This repository contains a summary of research and supplementary educational code related to Neuro-Symbolic Artificial Intelligence. By accessing this repository, you agree to the following terms:
 
 **1. The Explanatory Text (README and Summaries)**
 The text, diagrams, and explanations provided in the [README.md](README.md) and throughout the repository are licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)**. 
@@ -14,7 +14,7 @@ The text, diagrams, and explanations provided in the [README.md](README.md) and 
 **2. The Provided Code (Jupyter Notebooks)**
 The original source code provided in this repository ([data_collection.ipynb](data_collection.ipynb), [main_algorithm.ipynb](main_algorithm.ipynb), and related original scripts) is strictly provided for educational purposes and academic inspiration.
 
-* **You are free to:** Read, study, and analyze the code to understand the underlying Neuro-Symbolic (NeSy) concepts and architectures. You may implement the *ideas* and *algorithms* demonstrated here into your own original, completely rewritten codebase for personal, academic, or non-commercial projects.
+* **You are free to:** Read, study, and analyze the code to understand the underlying Neuro-Symbolic concepts and architectures. You may implement the *ideas* and *algorithms* demonstrated here into your own original, completely rewritten codebase for personal, academic, or non-commercial projects.
 * **You may NOT:** Copy the code line-by-line, make trivial modifications to bypass this restriction, or use the exact implementation provided here in your own projects. You may not distribute, sublicense, or use this code for any commercial purposes.
 
 **3. Third-Party Code**
