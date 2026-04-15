@@ -146,15 +146,14 @@
 </p>
 
 <p align="justify">
- You may <b>not</b> copy the notebooks (<a href="main_algorithm.ipynb">main_algorithm.ipynb</a> and <a href="data_collection.ipynb">data_collection.ipynb</a>) line-by-line or use the exact implementation in your own repositories. Please also note that `visudo_scripts.zip` belongs to its original authors. 
+ You may <b>not</b> copy the notebooks (<a href="main_algorithm.ipynb">main_algorithm.ipynb</a> and <a href="data_collection.ipynb">data_collection.ipynb</a>) line-by-line or use the exact implementation in your own repositories. Please also note that <a href="visudo_scripts.zip">visudo_scripts.zip</a> belongs to its original authors. 
 </p>
 
 <p align="justify">
-For full details, please see the [LICENSE.md](LICENSE.md) file.
+For full details, please see the <a href="LICENSE.md">LICENSE.md</a> file.
 </p>
 
 ### How to Cite
-
 <p align="justify">
 If this repository or the concepts discussed here inspire your own academic or personal projects, please be sure to mention me! You can use the following citation format:
 </p>
