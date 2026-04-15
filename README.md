@@ -47,7 +47,7 @@
 ## Challenge
 
 <p align="justify">
- NeSy systems are the <i>bee's knees</i>, and <a href="https://www.linkedin.com/posts/gary-marcus-b6384b4_how-o3-and-grok-4-accidentally-vindicated-activity-7350215211166953472-iN8p">some</a> even believe the <i>next</i> paradigm shift in AI will come courtesy of NeSy. However, there are still hurdles to jump, and for my thesis, I focused on a <i>triple-threat challenge</i> in current NeSy visual reasoning frameworks. But before jumping into that rabbit hole, let's quickly review visual reasoning.
+ NeSy systems are the <i>the new cool kids on the block</i>, and <a href="https://www.linkedin.com/posts/gary-marcus-b6384b4_how-o3-and-grok-4-accidentally-vindicated-activity-7350215211166953472-iN8p">some</a> even believe the <i>next</i> paradigm shift in AI will come courtesy of NeSy. However, there are still hurdles to jump, and for my thesis, I focused on a <i>triple-threat challenge</i> in current NeSy visual reasoning frameworks. But before jumping into that rabbit hole, let's quickly review visual reasoning.
 </p>
 
 <p align="justify">
