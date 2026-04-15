@@ -139,3 +139,36 @@
 <p align="justify">
  I'd like to express my deepest gratitude to my advisor, <a href="https://www.polito.it/personale?p=lia.morra">Professor Lia Morra</a>, for her continuous guidance, support, and encouragement throughout this research. I'm also thankful to the members of her team, especially <a href="https://www.polito.it/personale?p=alessandro.russo">Ph.D candidate Alessandro Russo</a>, for his valuable feedback.
 </p>
+
+## Usage and Citation
+<p align="justify">
+ The code and explanations in this repository are provided to inspire new ideas in the NeSy AI space. <b>This is a source-available repository, not an open-source one</b>. You are highly encouraged to study the concepts, understand the dynamic logic tensor networks (D-LTN) approach, and write your own original code based on these ideas for your projects!
+</p>
+
+<p align="justify">
+ You may <b>not</b> copy the notebooks (<a href="main_algorithm.ipynb">main_algorithm.ipynb</a> and <a href="data_collection.ipynb">data_collection.ipynb</a>) line-by-line or use the exact implementation in your own repositories. Please also note that `visudo_scripts.zip` belongs to its original authors. 
+</p>
+
+<p align="justify">
+For full details, please see the [LICENSE.md](LICENSE.md) file.
+</p>
+
+### How to Cite
+
+<p align="justify">
+If this repository or the concepts discussed here inspire your own academic or personal projects, please be sure to mention me! You can use the following citation format:
+</p>
+
+**APA**
+> Afshari, H. (2025). *Neuro-Symbolic Artificial Intelligence for Visual Reasoning via Dynamic Logic Tensor Networks* [Source code/Summary]. GitHub. https://github.com/homayoun-afshari/nesy
+
+**BibTeX**
+```bibtex
+@misc{afshari2024nesy,
+  author = {Afshari, Homayoun},
+  title = {Neuro-Symbolic Artificial Intelligence for Visual Reasoning via Dynamic Logic Tensor Networks},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{[https://github.com/homayoun-afshari/nesy](https://github.com/homayoun-afshari/nesy)}}
+}
